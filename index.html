@@ -75,7 +75,7 @@
             <a href="#about" class="btn primary" id="btn-about"
                 data-pt="Vamos começar!" data-en="Let's get started!">Vamos começar!</a>
 
-            <a href="#contact" class="btn secondary"
+            <a href="#contact" class="btn secondary" id="open-contact-home"
                 data-pt="Entrar em Contato" data-en="Get in Touch">Entrar em Contato</a>
             </div>
 
@@ -89,10 +89,11 @@
         </section>
 
         <section class="about" id="about">
+
             <div class="about-container">
 
 
-                <div class="about-content">
+                <div class="about-content reveal delay-1">
 
                     <h1 data-pt="Sobre mim" data-en="About Me">Sobre mim</h1>
 
@@ -105,10 +106,26 @@
                     data-en="My interest in software development comes from the possibility of building solutions that move from concept to reality and have a real impact on people. I enjoy understanding how applications work as a whole and taking part in the entire process, from idea to delivery.">
                     Meu interesse pelo desenvolvimento vem da possibilidade de construir soluções que saem do papel e ganham forma, impactando pessoas de maneira real. Gosto de entender como as aplicações funcionam por completo e de participar de todo o processo, do conceito à entrega.
                     </p>
-                </div>    
+                    <div class="about-skills">
+                    <h2 data-pt="Tecnologias & Ferramentas"
+                        data-en="Technologies & Tools">
+                        Tecnologias & Ferramentas</h2>
+
+                    <ul class="skills-list">
+                    <li class="reveal delay-1">HTML5</li>
+                    <li class="reveal delay-2">CSS3</li>
+                    <li class="reveal delay-3">JavaScript</li>
+                    <li class="reveal delay-4">Git & GitHub</li>
+                    <li class="reveal delay-5">Node.js (básico)</li>
+                    </ul>
+
+                    </div>
+                </div>
+
+                
                     
-                <div class="about-photo">
-                    <img src="imagens/eu.jpg" alt="Foto de Brenno">
+                <div class="about-photo reveal delay-2">
+                    <img src="imagens/BlusaCinza.png" alt="Foto de Brenno">
                 </div>
 
                                  
@@ -116,8 +133,148 @@
             </div>
         </section>
 
+        <section class="projects" id="projects">
+            <div class="projects-container">
+
+                <h1 data-pt="Projetos"
+                    data-en="Projects">
+                Projetos
+                </h1>
+
+                <p class="projects-intro"
+                data-pt="Alguns projetos que desenvolvi para colocar em prática meus estudos e evoluir como desenvolvedor."
+                data-en="Some projects I developed to put my studies into practice and grow as a developer.">
+                Alguns projetos que desenvolvi para colocar em prática meus estudos e evoluir como desenvolvedor.
+                </p>
+
+                <div class="projects-grid">
+
+                <!-- Projeto 1 -->
+                <div class="project-card reveal delay-1">
+                    <div class="project-image">
+                    <img src="imagens/GolaPreta.png" alt="Projeto 1">
+                    </div>
+
+                    <div class="project-content">
+                    <h2>Portfolio One Page</h2>
+
+                    <p>
+                        Site pessoal responsivo com modo claro/escuro, animações e suporte a múltiplos idiomas.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" target="_blank">Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="project-card reveal delay-2">
+                    <div class="project-image">
+                    <img src="imagens/Gravata.png" alt="Projeto 2">
+                    </div>
+
+                    <div class="project-content">
+                    <h2>To-Do App</h2>
+
+                    <p>
+                        Aplicação para organização de tarefas com foco em simplicidade e usabilidade.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>LocalStorage</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" target="_blank">Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+            </section>
+
+            <section class="contact-cta">
+            <div class="contact-cta-content reveal delay-1">
+                <h1 data-pt="Vamos conversar?"
+                    data-en="Let’s talk?">
+                Vamos conversar?
+                </h1>
+
+                <p data-pt="Estou aberto a oportunidades, projetos e conexões."
+                data-en="I’m open to opportunities, projects, and connections.">
+                Estou aberto a oportunidades, projetos e conexões.
+                </p>
+
+                <button class="btn primary" id="open-contact">
+                CONTATOS
+                </button>
+            </div>
+            </section>
+
+            <!-- MODAL CONTATO -->
+            <div class="contact-modal" id="contact-modal">
+            <div class="contact-box reveal">
+
+                <button class="close-modal" id="close-contact">✕</button>
+
+                <h2>Meus Contatos</h2>
+
+                <ul class="contact-list">
+                <li>
+                    <strong>LinkedIn</strong>
+                    <a href="https://www.linkedin.com/in/brennoteixeira" target="_blank">
+                    www.linkedin.com/in/brennoteixeira
+                    </a>
+                </li>
+
+                <li>
+                    <strong>Email</strong>
+                    <a>
+                    brennotaraujo@gmail.com
+                    </a>
+                </li>
+
+                <li>
+                    <strong>Telefone</strong>
+                    <span>(21) 99507-3126</span>
+                </li>
+                </ul>
+            </div>
+            </div>
+
+
         <script src="script.js"></script>
 
+        <a href="https://github.com/brennoteixeira"
+        class="github-float"
+        target="_blank"
+        aria-label="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.57.1.78-.25.78-.55
+            0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7
+            -1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2
+            1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.75-1.56
+            -2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1
+            -.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.18
+            .93-.26 1.92-.39 2.9-.39.99 0 1.98.13 2.9.39
+            2.22-1.49 3.2-1.18 3.2-1.18.63 1.65.23 2.87.11 3.17
+            .75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.4-5.25 5.68
+            .42.36.8 1.08.8 2.18 0 1.57-.02 2.84-.02 3.23
+            0 .3.21.65.79.54A10.52 10.52 0 0 0 23.5 12
+            C23.5 5.65 18.35.5 12 .5z"/>
+        </svg>
+        </a>
 
     </body>
 

@@ -75,3 +75,54 @@ themeBtn.addEventListener("click", () => {
     themeBtn.innerText = "☾";  // lua branca
   }
 });
+
+/* ===== SCROLL REVEAL (DO ABOUT PRA BAIXO) ===== */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+/* ===== MODAL CONTATO ===== */
+
+const openContact = document.getElementById("open-contact");
+const openContactHome = document.getElementById("open-contact-home");
+const closeContact = document.getElementById("close-contact");
+const contactModal = document.getElementById("contact-modal");
+
+function openModal() {
+  contactModal.classList.add("active");
+}
+
+if (openContact) {
+  openContact.addEventListener("click", openModal);
+}
+
+if (openContactHome) {
+  openContactHome.addEventListener("click", openModal);
+}
+
+if (closeContact && contactModal) {
+  closeContact.addEventListener("click", () => {
+    contactModal.classList.remove("active");
+  });
+
+  contactModal.addEventListener("click", (e) => {
+    if (e.target === contactModal) {
+      contactModal.classList.remove("active");
+    }
+  });
+}

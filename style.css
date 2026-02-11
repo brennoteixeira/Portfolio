@@ -216,7 +216,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #000;
+  background: #252525;
   z-index: 1000;
 }
 
@@ -318,7 +318,7 @@ a:hover {
   right: 0;
   width: 260px;
   height: calc(100vh - 64px);
-  background: #000;
+  background: #252525;
   border-left: 1px solid #111;
   display: flex;
   flex-direction: column;
@@ -335,6 +335,7 @@ a:hover {
 .nav a {
   padding: 12px 0;
   cursor: pointer;
+  text-decoration: none;
 }
 
 /* ===== EFEITO TECH PARA BOTÕES ===== */
@@ -395,7 +396,7 @@ a:hover {
   height: 40px;
   border-radius: 50%;
   border: none;
-  background-color: #222;  /* fundo escuro */
+  background-color: #000000;  /* fundo escuro */
   color: #fff;             /* lua branca */
   font-size: 20px;
   cursor: pointer;
@@ -452,4 +453,437 @@ body.light-mode .home-intro,
 body.light-mode .home-name,
 body.light-mode .home-note {
   color: #111;
+}
+
+/* ===== SKILLS ===== */
+
+.about-skills {
+  margin-top: 40px;
+}
+
+.about-skills h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  background: #111;
+  border: 1px solid #333;
+  color: #e0e0e0;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+/* leve zoom */
+.skills-list li:hover {
+  transform: scale(1.05);
+}
+
+/* linha tech */
+.skills-list li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255,255,255,0.5) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.skills-list li:hover::after {
+  animation: skill-scan 0.55s ease forwards;
+}
+
+@keyframes skill-scan {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* modo claro */
+body.light-mode .about-skills h2 {
+  color: #111;
+}
+
+body.light-mode .skills-list li {
+  background: #f3f3f3;
+  border: 1px solid #ccc;
+  color: #111;
+}
+
+/* ===== ANIMAÇÃO DE ENTRADA DAS SKILLS ===== */
+
+.skills-list li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+/* quando ativo */
+.skills-list li.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* delay em cascata */
+.skills-list li:nth-child(1) { transition-delay: 0.05s; }
+.skills-list li:nth-child(2) { transition-delay: 0.1s; }
+.skills-list li:nth-child(3) { transition-delay: 0.15s; }
+.skills-list li:nth-child(4) { transition-delay: 0.2s; }
+.skills-list li:nth-child(5) { transition-delay: 0.25s; }
+.skills-list li:nth-child(6) { transition-delay: 0.3s; }
+.skills-list li:nth-child(7) { transition-delay: 0.35s; }
+.skills-list li:nth-child(8) { transition-delay: 0.4s; }
+/* ajuste final mobile */
+@media (max-width: 600px) {
+  .about-skills h2 {
+    font-size: 1.4rem;
+  }
+
+  .skills-list li {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+  }
+}
+
+/* ===== PROJECTS ===== */
+
+.projects {
+  padding: 100px 20px;
+}
+
+.projects-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.projects h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.projects-intro {
+  max-width: 600px;
+  margin-bottom: 60px;
+  color: #ccc;
+}
+
+/* grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+/* card */
+.project-card {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #222;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* imagem */
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.06);
+}
+
+/* efeito tech na imagem */
+.project-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255,255,255,0.4) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.project-card:hover .project-image::after {
+  animation: project-scan 0.6s ease forwards;
+}
+
+@keyframes project-scan {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+/* conteúdo */
+.project-content {
+  padding: 24px;
+}
+
+.project-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  color: #ccc;
+}
+
+/* tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.project-tags span {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: #000;
+  border: 1px solid #333;
+}
+
+/* links */
+.project-links {
+  display: flex;
+  gap: 20px;
+}
+
+.project-links a {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* modo claro */
+body.light-mode .project-card {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+body.light-mode .projects-intro,
+body.light-mode .project-content p {
+  color: #333;
+}
+
+body.light-mode .project-tags span {
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+/* ===== SCROLL REVEAL (GLOBAL) ===== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* cascata */
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+.reveal.delay-4 { transition-delay: 0.4s; }
+.reveal.delay-5 { transition-delay: 0.5s; }
+
+/* ===== CONTACT CTA ===== */
+
+.contact-cta {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.contact-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-cta h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.contact-cta p {
+  margin-bottom: 32px;
+  color: #ccc;
+}
+
+/* ===== MODAL ===== */
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2000;
+}
+
+.contact-modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.contact-box {
+  background: #111;
+  border-radius: 16px;
+  padding: 32px;
+  width: 90%;
+  max-width: 420px;
+  border: 1px solid #222;
+  position: relative;
+  text-align: left;
+}
+
+/* botão fechar */
+.close-modal {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* lista */
+.contact-box h2 {
+  margin-bottom: 24px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.contact-list strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contact-list a {
+  word-break: break-all;
+}
+
+/* modo claro */
+body.light-mode .contact-modal {
+  background: rgba(255,255,255,0.85);
+}
+
+body.light-mode .contact-box {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+body.light-mode .close-modal {
+  color: #111;
+}
+
+.contact-list a {
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.contact-list a:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* ===== GITHUB FLOAT BUTTON ===== */
+
+.github-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #111;
+  border: 1px solid #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1800;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.github-float svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+}
+
+.github-float:hover {
+  transform: scale(1.1);
+  background: #000;
+}
+
+/* modo claro */
+body.light-mode .github-float {
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+body.light-mode .github-float svg {
+  fill: #111;
 }
