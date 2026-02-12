@@ -50,7 +50,7 @@ Estudante de Engenharia de Software
 Foco em Desenvolvimento Full Stack  
 
 📎 GitHub: [brennoteixeira](https://github.com/brennoteixeira)
-💼 LinkedIn: https://www.linkedin.com/in/brenno-t-56380a266/
+💼 LinkedIn: www.linkedin.com/in/brennoteixeira
 
 ---
 
