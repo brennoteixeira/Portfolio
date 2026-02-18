@@ -1,4 +1,4 @@
-# 🚀 Portfólio Full Stack
+# 🚀 Portfólio
 
 Este repositório contém meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e evolução como desenvolvedor Full Stack.
 
