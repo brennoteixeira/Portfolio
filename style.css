@@ -833,6 +833,7 @@ body.light-mode .skills-list li {
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 20px;
+  text-decoration: none; 
 }
 
 .project-tags span {
@@ -1092,4 +1093,5 @@ body.light-mode header nav a::after {
 
 .nav a {
   text-decoration: none !important;
+
 }
